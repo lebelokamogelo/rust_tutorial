@@ -1,13 +1,20 @@
-use std::io::stdin;
+use std::io;
+use rand::Rng;
 
 fn main() {
-    println!("Please enter your name ");
+    println!("Guess the number!");
 
-    let mut name = String::new();
+    let secret_number = rand::thread_rng().gen_range(1..=100);
 
-    stdin() // stdin function allow us to handle user input
-    .read_line(&mut name)
-    .expect("Failed to read line");
+    println!("The secret number is: {secret_number}");
 
-    print!("Your name is {}", name);
+    println!("Please input your guess.");
+
+    let mut guess = String::new();
+
+    io::stdin()
+        .read_line(&mut guess)
+        .expect("Failed to read line");
+
+    println!("You guessed: {guess}");
 }
