@@ -2,13 +2,8 @@ use std::io;
 use rand::Rng;
 
 fn main() {
-    println!("Guess the number!");
 
-    let secret_number = rand::thread_rng().gen_range(1..=100);
-
-    println!("The secret number is: {secret_number}");
-
-    println!("Please input your guess.");
+    println!("Please input your guess (1-10).");
 
     let mut guess = String::new();
 
@@ -16,5 +11,14 @@ fn main() {
         .read_line(&mut guess)
         .expect("Failed to read line");
 
-    println!("You guessed: {guess}");
+    print!("You guessed: {guess}");
+
+    let secret = generate_secret();
+    println!("The secret number is: {secret}");
+}
+
+fn generate_secret() -> i32 {
+    let secret_number = rand::thread_rng().gen_range(1..=10);
+
+    secret_number
 }
