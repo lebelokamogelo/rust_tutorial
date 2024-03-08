@@ -14,6 +14,8 @@ fn main() {
     print!("You guessed: {guess}");
 
     let secret = generate_secret();
+
+    // control flow statements
     println!("The secret number is: {secret}");
 }
 
