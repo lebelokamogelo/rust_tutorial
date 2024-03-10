@@ -11,12 +11,18 @@ fn main() {
         .read_line(&mut guess)
         .expect("Failed to read line");
 
-    print!("You guessed: {guess}");
-
     let secret = generate_secret();
+    let guess: i32 = guess.trim().parse().expect("Failed to convert");
 
-    // control flow statements
-    println!("The secret number is: {secret}");
+    match guess {
+
+        // values used in match arms must be known at compile time.
+        // If a value isn't known at compile time, it can't be used directly in a match arm.
+        // Instead, you'll need to bind the value to a variable using a pattern.
+
+        x if x == secret => println!("You won"),
+        _ => println!("You lost, try again")
+    }
 }
 
 fn generate_secret() -> i32 {
