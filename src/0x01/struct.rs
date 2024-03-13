@@ -15,6 +15,17 @@ impl User {
     fn walk(&self) {
         println!("{} can walk!", self.username, )
     }
+
+    // This is an "associated function" because this function is associated with
+    // a particular type, that is, Point.
+    //
+    // Associated functions don't need to be called with an instance.
+    // These functions are generally used like constructors.
+    // Another associated function, taking two arguments:
+    fn new(username: String, email: String) -> User {
+        User { active: true, username, email }
+    }
+
 }
 
 fn main(){
@@ -42,6 +53,9 @@ fn main(){
         username: user.username,
         email: String::from("another@example.com"),
     };
+
+    let user3 = User::new(String::from("James"), String::from("james@example.com"));
+    println!("{}", user3.username);
 
 }
 
