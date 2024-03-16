@@ -12,7 +12,7 @@
 
 use std::io;
 
-fn main() {
+pub fn fibonacci() {
     let mut input = String::new();
     println!("Enter the position of the Fibonacci sequence:");
 

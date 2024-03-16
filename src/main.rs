@@ -1,3 +1,4 @@
+/*
 use std::io;
 use rand::Rng;
 
@@ -29,4 +30,26 @@ fn generate_secret() -> i32 {
     let secret_number = rand::thread_rng().gen_range(1..=10);
 
     secret_number
+}
+*/
+
+// Managing Growing Projects with Packages, Crates, and Modules
+
+/*
+    Start from the crate root: Compiler begins in the crate root file.
+    Declare modules: Use module keyword in root file or other files.
+    Declare submodules: Also using module keyword in non-root files.
+    Paths to code: Referencing module code within the crate.
+    Public vs. private: Control visibility with pub keyword.
+    Use keyword: Create shortcuts within scopes for concise code.
+ */
+
+mod module;
+
+use module::fibonacci::fibonacci;
+
+fn main() {
+
+    fibonacci();
+    module::console::print();
 }
