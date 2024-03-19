@@ -57,3 +57,65 @@ pub fn vector(){
 }
 
 // lastly, i can have vector of my own type, struct, enum and ect
+
+/* STRING */
+
+/* 
+- A string in Rust is a sequence of Unicode characters encoded in UTF-8
+- For example, "Rust Programming" is a string in which each character is a 
+valid Unicode character. i.e. "R", "u", "s", "t", " ", and so on.
+- I can iterate through it
+*/
+
+pub fn string(){
+    // string creation using String::from() method
+    let mut word = String::from("Hello");
+
+    println!("word = {}", word);
+
+    // mutable a string 
+    // add the keyword mut
+    // use the push_str fn or push for chars
+    word.push_str(" World!");
+
+    println!("word = {}", word);
+
+    // Ownership moved
+    // let m_word = word;
+    // println!("{m_word}");
+
+    // we can clone the word without taking the ownership using clone() fn
+    let c_word = word.clone();
+    println!("{c_word}");
+
+    println!("{word}");
+
+    // String slicing
+    /*
+    - String slicing allows us to reference a part (portion) of a string
+    - immutable
+    */
+
+    let mut slice = &word[0..5];
+    slice = &mut word[0..=10];
+    println!("new string: {slice}");
+
+    // String` cannot be indexed by `{integer} result in error
+    // println!("{}", word[0]);
+
+    // Iterating through a string
+    for char in word.chars() {
+        println!("{}", char);
+    }
+
+    // Creating an empty nre string 
+    let mut username = String::new();
+    username.push_str("username");
+
+    println!("{username}");
+
+    let mut owned = &mut word[0..5].to_owned();
+    owned.push('!');
+    println!("{owned} - {word}");
+
+}
