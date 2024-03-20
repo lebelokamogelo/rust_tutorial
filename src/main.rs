@@ -47,11 +47,11 @@ fn generate_secret() -> i32 {
 mod module;
 
 // use module::fibonacci::fibonacci;
-use module::collections::string;
+use module::collections::hashmap;
 
 fn main() {
 
-    string();
+    hashmap();
     // fibonacci();
     module::console::print();
 }

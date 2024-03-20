@@ -119,3 +119,33 @@ pub fn string(){
     println!("{owned} - {word}");
 
 }
+
+
+/* HashMap */
+
+/*
+- Data structure allows us to store data in key-value pairs
+
+- Each value is associated with a corresponding key.
+- Keys are unique, whereas values can duplicate.
+- Values can be accessed using their corresponding keys.
+- HashMap is part of the Rust standard collections library,
+so we must include the HashMap module in our program to use it.
+*/
+
+use std::collections::HashMap;
+
+pub fn hashmap(){
+    let mut fruits: HashMap<i32, String> = HashMap::new();
+
+    // insert elements to hashmap
+    fruits.insert(1, String::from("Apple"));
+    fruits.insert(2, String::from("Banana"));
+
+    // accessing values in a Hash Map
+    // we use the get fn
+    // 
+
+    let first_fruit = fruits.get(&1);
+    println!("first fruit = {:?}", first_fruit);
+}
