@@ -15,8 +15,7 @@
 
 - Rust can infer type form the initialised values
 */
-
-pub fn vector(){
+pub fn vector() {
     let mut v = Vec::new();
 
     // push method to add to the vector
@@ -25,8 +24,8 @@ pub fn vector(){
 
     // get method to get the element
     /*
-    - The get() method does not directly return the vector element 
-    but an enum with type Option<T>. 
+    - The get() method does not directly return the vector element
+    but an enum with type Option<T>.
     - The result is either a Some(T) or None
     */
 
@@ -49,31 +48,31 @@ pub fn vector(){
 
     // Ownership has been moved
     // & to borrow
-    for index in &v{
-        println!("{}",index);
+    for index in &v {
+        println!("{}", index);
     }
 
-    println!("{}",v[0]);
+    println!("{}", v[0]);
 }
 
 // lastly, i can have vector of my own type, struct, enum and ect
 
 /* STRING */
 
-/* 
+/*
 - A string in Rust is a sequence of Unicode characters encoded in UTF-8
-- For example, "Rust Programming" is a string in which each character is a 
+- For example, "Rust Programming" is a string in which each character is a
 valid Unicode character. i.e. "R", "u", "s", "t", " ", and so on.
 - I can iterate through it
 */
 
-pub fn string(){
+pub fn string() {
     // string creation using String::from() method
     let mut word = String::from("Hello");
 
     println!("word = {}", word);
 
-    // mutable a string 
+    // mutable a string
     // add the keyword mut
     // use the push_str fn or push for chars
     word.push_str(" World!");
@@ -108,18 +107,16 @@ pub fn string(){
         println!("{}", char);
     }
 
-    // Creating an empty nre string 
+    // Creating an empty nre string
     let mut username = String::new();
     username.push_str("username");
 
     println!("{username}");
 
-    let mut owned = &mut word[0..5].to_owned();
+    let owned = &mut word[0..5].to_owned();
     owned.push('!');
     println!("{owned} - {word}");
-
 }
-
 
 /* HashMap */
 
@@ -135,7 +132,7 @@ so we must include the HashMap module in our program to use it.
 
 use std::collections::HashMap;
 
-pub fn hashmap(){
+pub fn hashmap() {
     let mut fruits: HashMap<i32, String> = HashMap::new();
 
     // insert elements to hashmap
@@ -144,7 +141,7 @@ pub fn hashmap(){
 
     // accessing values in a Hash Map
     // we use the get fn
-    // 
+    //
 
     let first_fruit = fruits.get(&1);
     println!("first fruit = {:?}", first_fruit);

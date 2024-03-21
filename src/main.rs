@@ -36,22 +36,23 @@ fn generate_secret() -> i32 {
 // Managing Growing Projects with Packages, Crates, and Modules
 
 /*
-    Start from the crate root: Compiler begins in the crate root file.
-    Declare modules: Use module keyword in root file or other files.
-    Declare submodules: Also using module keyword in non-root files.
-    Paths to code: Referencing module code within the crate.
-    Public vs. private: Control visibility with pub keyword.
-    Use keyword: Create shortcuts within scopes for concise code.
- */
+   Start from the crate root: Compiler begins in the crate root file.
+   Declare modules: Use module keyword in root file or other files.
+   Declare submodules: Also using module keyword in non-root files.
+   Paths to code: Referencing module code within the crate.
+   Public vs. private: Control visibility with pub keyword.
+   Use keyword: Create shortcuts within scopes for concise code.
+*/
 
 mod module;
 
 // use module::fibonacci::fibonacci;
-use module::collections::hashmap;
+// use module::collections::hashmap;
+
+use module::error::errors;
 
 fn main() {
-
-    hashmap();
+    errors();
     // fibonacci();
     module::console::print();
 }
