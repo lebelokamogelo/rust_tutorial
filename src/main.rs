@@ -49,10 +49,11 @@ mod module;
 // use module::fibonacci::fibonacci;
 // use module::collections::hashmap;
 
-use module::error::errors;
+//use module::error::errors;
+use module::generics::generic;
 
 fn main() {
-    errors();
     // fibonacci();
+    generic();
     module::console::print();
 }

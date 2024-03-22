@@ -4,6 +4,7 @@ pub mod console {
     }
 }
 
-pub mod collections;
-pub mod error;
+//pub mod collections;
+//pub mod error;
+pub mod generics;
 // pub mod fibonacci;
