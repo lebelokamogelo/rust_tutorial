@@ -50,10 +50,21 @@ mod module;
 // use module::collections::hashmap;
 
 //use module::error::errors;
-use module::generics::generic;
+//use module::generics::generic;
+
+use module::traits::{Summary, Tweet};
 
 fn main() {
     // fibonacci();
-    generic();
+    //
+    let tweet = Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from("of course, as you probably already know, people"),
+        reply: false,
+        retweet: false,
+    };
+
+    println!("1 new tweet: {}", tweet.summarize());
+
     module::console::print();
 }
