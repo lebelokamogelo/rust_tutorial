@@ -52,7 +52,7 @@ mod module;
 //use module::error::errors;
 //use module::generics::generic;
 
-use module::traits::{Summary, Tweet};
+use module::traits::{notify, Summary, Tweet};
 
 fn main() {
     // fibonacci();
@@ -65,6 +65,7 @@ fn main() {
     };
 
     println!("1 new tweet: {}", tweet.summarize());
+    notify(&tweet);
 
     module::console::print();
 }

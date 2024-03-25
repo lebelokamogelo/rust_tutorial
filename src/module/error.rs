@@ -41,13 +41,10 @@ pub fn errors() {
      */
     match File::open("hello.txt") {
         Ok(file) => file,
-        Err(error) => {
-            println!("No such file or directory, {:?}", error);
-
-            return;
-        }
+        Err(error) => {}
     };
 
     // another shortcut with unwrap
     // let greeting_file = File::open("hello.txt").unwrap();
+    // we can also use the ?, expect
 }
