@@ -49,14 +49,16 @@ mod module;
 // use module::fibonacci::fibonacci;
 // use module::collections::hashmap;
 
-//use module::error::errors;
-//use module::generics::generic;
+// use module::error::errors;
+// use module::generics::generic;
 
-use module::traits::{notify, Summary, Tweet};
+// use module::traits::{notify, Summary, Tweet};
+
+use module::lifetime::lifetime;
 
 fn main() {
     // fibonacci();
-    //
+    /*
     let tweet = Tweet {
         username: String::from("horse_ebooks"),
         content: String::from("of course, as you probably already know, people"),
@@ -66,6 +68,9 @@ fn main() {
 
     println!("1 new tweet: {}", tweet.summarize());
     notify(&tweet);
+    */
+
+    lifetime();
 
     module::console::print();
 }
