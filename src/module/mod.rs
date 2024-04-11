@@ -8,5 +8,6 @@ pub mod console {
 //pub mod error;
 //pub mod generics;
 
-pub mod lifetime;
+//pub mod lifetime;
+pub mod closure;
 // pub mod fibonacci;

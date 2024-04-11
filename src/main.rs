@@ -54,7 +54,7 @@ mod module;
 
 // use module::traits::{notify, Summary, Tweet};
 
-use module::lifetime::lifetime;
+//use module::lifetime::lifetime;
 
 fn main() {
     // fibonacci();
@@ -70,7 +70,7 @@ fn main() {
     notify(&tweet);
     */
 
-    lifetime();
+    module::closure::closure();
 
     module::console::print();
 }
