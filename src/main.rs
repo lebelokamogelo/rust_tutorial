@@ -70,7 +70,7 @@ fn main() {
     notify(&tweet);
     */
 
-    module::closure::closure();
+    module::iterators::iterators();
 
     module::console::print();
 }

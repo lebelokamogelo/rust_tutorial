@@ -9,5 +9,7 @@ pub mod console {
 //pub mod generics;
 
 //pub mod lifetime;
-pub mod closure;
+//pub mod closure;
 // pub mod fibonacci;
+//
+pub mod iterators;
