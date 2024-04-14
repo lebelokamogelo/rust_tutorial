@@ -70,7 +70,7 @@ fn main() {
     notify(&tweet);
     */
 
-    module::iterators::iterators();
+    module::smart_pointers::smart_pointer();
 
     module::console::print();
 }
