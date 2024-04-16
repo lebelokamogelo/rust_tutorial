@@ -17,6 +17,13 @@
 //  Using a Box<T> to Store Data on the heap
 //
 pub fn smart_pointer() {
-    let b = Box::new(5);
-    println!("b = {}", b);
+    //let b = Box::new(5);
+    // println!("b = {}", b);
+
+    // Deref Trait
+    let x = 5;
+    let y = Box::new(x);
+    println!("{y}");
+    assert_eq!(5, x);
+    assert_eq!(5, *y);
 }
