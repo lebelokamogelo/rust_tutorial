@@ -13,4 +13,5 @@ pub mod console {
 // pub mod fibonacci;
 //
 //pub mod iterators;
-pub mod smart_pointers;
+//pub mod smart_pointers;
+pub mod pattern;
