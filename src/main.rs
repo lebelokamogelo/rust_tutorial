@@ -70,7 +70,7 @@ fn main() {
     notify(&tweet);
     */
 
-    module::pattern::pattern();
+    module::args::env_args();
 
     module::console::print();
 }
