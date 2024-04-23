@@ -70,7 +70,7 @@ fn main() {
     notify(&tweet);
     */
 
-    module::unsafe_advance::unsave();
+    module::trait_advance::trait_advance();
 
     module::console::print();
 }
