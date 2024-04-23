@@ -70,7 +70,7 @@ fn main() {
     notify(&tweet);
     */
 
-    module::args::env_args();
+    module::unsafe_advance::unsave();
 
     module::console::print();
 }
