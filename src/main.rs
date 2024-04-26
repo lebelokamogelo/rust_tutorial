@@ -70,7 +70,7 @@ fn main() {
     notify(&tweet);
     */
 
-    module::trait_advance::trait_advance();
+    module::type_advanced::type_advance();
 
     module::console::print();
 }
