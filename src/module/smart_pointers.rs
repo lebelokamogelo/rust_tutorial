@@ -16,14 +16,53 @@
 //
 //  Using a Box<T> to Store Data on the heap
 //
+//  Defining Our Own Smart Pointer
+use std::ops::Deref;
+
+#[derive(Debug)]
+struct MyBox<T>(T);
+
+impl<T> MyBox<T> {
+    fn new(x: T) -> MyBox<T> {
+        MyBox(x)
+    }
+}
+
+// Treating a Type Like a Reference by Implementing the Deref Trait
+impl<T> Deref for MyBox<T> {
+    type Target = T;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+struct CustomSmartPointer {
+    data: String,
+}
+
+impl Drop for CustomSmartPointer {
+    fn drop(&mut self) {
+        println!("Dropping CustomSmartPointer with data `{}`!", self.data);
+    }
+}
+
 pub fn smart_pointer() {
     //let b = Box::new(5);
     // println!("b = {}", b);
 
     // Deref Trait
     let x = 5;
-    let y = Box::new(x);
-    println!("{y}");
+    let y = MyBox::new(x);
+    println!("{}", *y);
     assert_eq!(5, x);
     assert_eq!(5, *y);
+
+    let c = CustomSmartPointer {
+        data: String::from("some data"),
+    };
+    println!("CustomSmartPointer created.");
+    drop(c);
+    // Value dropped : below code is compiler error trying to access the value moved
+    //println!("CustomSmartPointer dropped before the end of main. {}", c.data);
 }
