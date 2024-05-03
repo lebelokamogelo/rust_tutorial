@@ -70,7 +70,7 @@ fn main() {
     notify(&tweet);
     */
 
-    module::refcell::refcell();
+    module::thread::thread();
 
     module::console::print();
 }
