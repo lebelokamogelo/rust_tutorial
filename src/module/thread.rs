@@ -1,11 +1,20 @@
-use std::{thread, time::Duration};
+use std::{sync::mpsc, thread, time::Duration};
 
 // Using Threads to Run Code Simultaneously
 // Creating a New Thread with spawn
 //
 pub fn thread() {
+    let (tx, rx) = mpsc::channel();
     // spawn to fire up a new thread
-    let thread1 = thread::spawn(|| {
+    let thread1 = thread::spawn(move || {
+        // Using Message Passing to Transfer Data Between Threads
+        // To accomplish message-sending concurrency, Rust's standard library provides an
+        // implementation of channels. A channel is a general programming concept by
+        // which data is sent from one thread to another.
+
+        let val = String::from("hi");
+        tx.send(val).unwrap();
+
         for i in 1..10 {
             println!("hi number {} from the spawned thread!", i);
             thread::sleep(Duration::from_millis(1));
@@ -29,4 +38,7 @@ pub fn thread() {
 
     // Waiting for All Threads to Finish Using join Handles
     thread1.join().unwrap();
+
+    let received = rx.recv().unwrap();
+    println!("Got: {}", received);
 }
