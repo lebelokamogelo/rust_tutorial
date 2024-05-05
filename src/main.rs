@@ -70,7 +70,7 @@ fn main() {
     notify(&tweet);
     */
 
-    module::thread::thread();
+    module::thread_mul::thread_mul();
 
     module::console::print();
 }
