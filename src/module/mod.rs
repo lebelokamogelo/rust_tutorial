@@ -13,7 +13,7 @@ pub mod console {
 // pub mod fibonacci;
 //
 //pub mod iterators;
-pub mod thread_mul;
+pub mod shared_state;
 //pub mod pattern;
 //pub mod type_advanced;
 //pub mod args;
