@@ -70,7 +70,7 @@ fn main() {
     notify(&tweet);
     */
 
-    module::fn_advance::fn_advance();
+    module::macro_def::macro_def();
 
     module::console::print();
 }
