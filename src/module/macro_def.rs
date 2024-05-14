@@ -29,12 +29,16 @@ macro_rules! printf {
     ($message:expr) => {
         println!("{}", $message)
     };
+
+    ($x: expr, $y:expr) => {
+        println!("The sum is {}", $x + $y);
+    };
 }
 
 // macro repetition
 macro_rules! repeat_print {
     // match rule which matches multiple expressions in an argument
-    ($($x:expr),*) => {
+    ($($x:expr)*) => {
         $(
             println!("{}", $x);
         )*
@@ -45,5 +49,6 @@ pub fn macro_def() {
     // macros are a way of writing code that writes other code, which is known as metaprogramming.
     //
     printf!("Hello C");
-    repeat_print!(1, 2, 3);
+    repeat_print!(1 2 3);
+    printf!(5, 4);
 }
